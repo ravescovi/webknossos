@@ -157,8 +157,9 @@ export const getW: ShaderModule = {
         return vector[0];
       } else if (planeID == <%= OrthoViewIndices.PLANE_XZ %>) {
         return vector[1];
+      } else {
+        return 0.0;
       }
-      return 0.0;
     }
   `,
 };
