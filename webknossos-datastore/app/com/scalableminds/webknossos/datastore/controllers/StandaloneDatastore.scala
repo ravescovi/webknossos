@@ -13,7 +13,7 @@ class StandaloneDatastore @Inject()(implicit ec: ExecutionContext) extends Injec
     AllowRemoteOrigin {
       Ok(
         Json.obj(
-          "webknossosDatastore" -> webknossosDatastore.BuildInfo.toMap.mapValues(_.toString),
+          "webknossosDatastore" -> "BUILDINFO_DISABLED",
           "webknossos-wrap" -> webknossoswrap.BuildInfo.toMap.mapValues(_.toString)
         ))
     }

@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="commit-hash" content="@(webknossos.BuildInfo.commitHash)" />
+    <meta name="commit-hash" content="BUILDINFO_DISABLED" />
     <title>@(conf.Application.title)</title>
     @if(conf.Features.isDemoInstance){
     <meta
@@ -22,13 +22,13 @@
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="/assets/bundle/vendors~main.css?nocache=@(webknossos.BuildInfo.commitHash)"
+      href="/assets/bundle/vendors~main.css?nocache=BUILDINFO_DISABLED"
     />
     <link
       rel="stylesheet"
       type="text/css"
       media="screen"
-      href="/assets/bundle/main.css?nocache=@(webknossos.BuildInfo.commitHash)"
+      href="/assets/bundle/main.css?nocache=BUILDINFO_DISABLED"
     />
     @if(conf.Application.Authentication.enableDevAutoLogin){
     <script src="/api/auth/autoLogin"></script>
@@ -38,8 +38,8 @@
       data-airbrake-project-key="@(conf.Airbrake.projectKey)"
       data-airbrake-environment-name="@(conf.Airbrake.environment)"
     ></script>
-    <script src="/assets/bundle/vendors~main.js?nocache=@(webknossos.BuildInfo.commitHash)"></script>
-    <script src="/assets/bundle/main.js?nocache=@(webknossos.BuildInfo.commitHash)"></script>
+    <script src="/assets/bundle/vendors~main.js?nocache=BUILDINFO_DISABLED"></script>
+    <script src="/assets/bundle/main.js?nocache=BUILDINFO_DISABLED"></script>
   </head>
   <body>
     <main id="main-container"></main>

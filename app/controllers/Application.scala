@@ -30,7 +30,7 @@ class Application @Inject()(analyticsDAO: AnalyticsDAO,
     } yield {
       Ok(
         Json.obj(
-          "webknossos" -> webknossos.BuildInfo.toMap.mapValues(_.toString),
+          "webknossos" -> "BUILDINFO_DISABLED",
           "webknossos-wrap" -> webknossoswrap.BuildInfo.toMap.mapValues(_.toString),
           "schemaVersion" -> schemaVersion.toOption,
           "token" -> token

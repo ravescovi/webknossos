@@ -43,11 +43,9 @@ lazy val util = (project in file("util")).settings(
 lazy val webknossosDatastore = (project in file("webknossos-datastore"))
   .dependsOn(util)
   .enablePlugins(play.sbt.PlayScala)
-  .enablePlugins(BuildInfoPlugin)
   .settings(
     name := "webknossos-datastore",
     commonSettings,
-    BuildInfoSettings.webknossosDatastoreBuildInfoSettings,
     libraryDependencies ++= Dependencies.webknossosDatastoreDependencies,
     routesGenerator := InjectedRoutesGenerator,
     unmanagedJars in Compile ++= {
@@ -63,12 +61,10 @@ lazy val webknossosDatastore = (project in file("webknossos-datastore"))
 lazy val webknossosTracingstore = (project in file("webknossos-tracingstore"))
   .dependsOn(webknossosDatastore)
   .enablePlugins(play.sbt.PlayScala)
-  .enablePlugins(BuildInfoPlugin)
   .enablePlugins(ProtocPlugin)
   .settings(
     name := "webknossos-tracingstore",
     commonSettings,
-    BuildInfoSettings.webknossosTracingstoreBuildInfoSettings,
     libraryDependencies ++= Dependencies.webknossosTracingstoreDependencies,
     protocolBufferSettings,
     routesGenerator := InjectedRoutesGenerator
@@ -77,12 +73,10 @@ lazy val webknossosTracingstore = (project in file("webknossos-tracingstore"))
 lazy val webknossos = (project in file("."))
   .dependsOn(util, webknossosTracingstore)
   .enablePlugins(play.sbt.PlayScala)
-  .enablePlugins(BuildInfoPlugin)
   .settings(
     name := "webknossos",
     commonSettings,
     AssetCompilation.settings,
-    BuildInfoSettings.webknossosBuildInfoSettings,
     routesGenerator := InjectedRoutesGenerator,
     libraryDependencies ++= Dependencies.webknossosDependencies,
     sourceDirectory in Assets := file("none"),
