@@ -9,7 +9,7 @@ class StandaloneTracingstore extends InjectedController {
   def buildInfo = Action { implicit request =>
     Ok(
       Json.obj(
-        "webknossosTracingstore" ->  "BUILDINFO_DISABLED",
+        "webknossosTracingstore" -> "BUILDINFO_DISABLED",
       ))
   }
 }
